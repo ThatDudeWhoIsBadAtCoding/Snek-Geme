@@ -92,6 +92,11 @@ class Food:
     def __init__(self):
         x = random.randint(0, int(800/space)-1) * space
         y = random.randint(0, int(600/space)-1) * space
+        for e, f in snake.cords:
+            while x == snake.cords[e][0]:
+                x = random.randint(0, int(800 / space) - 1) * space
+            while f == snake.cords[f][1]:
+                y = random.randint(0, int(600 / space) - 1) * space
         self.cords = [x, y]
         pygame.draw.rect(screen, (255, 0, 0), pygame.Rect(x, y, space, space))
 
